@@ -14,7 +14,7 @@ import { useFormContext } from 'react-hook-form'
 import { EInputType } from '../utils/types'
 import { tags } from "../utils/constants";
 
-const MintForm = () => {
+const MintForm = ({ text, description }) => {
   const {
     register,
     watch,
@@ -69,9 +69,10 @@ const MintForm = () => {
           controlStatus={EControlStatus.NORMAL}
           label="Name"
           placeholder="Name"
-          required
+          value={text}
+          // required
           {...register(EInputType.TITLE, {
-            required: true,
+            // required: true,
             minLength: { value: 1, message: '' },
           })}
         />
@@ -81,8 +82,9 @@ const MintForm = () => {
           controlStatus={EControlStatus.NORMAL}
           label="Description"
           placeholder="Token description"
+          value={description}
           {...register(EInputType.DESCRIPTION, {
-            required: true,
+            // required: true,
           })}
         />
       </div>

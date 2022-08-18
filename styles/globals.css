@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.item-container  img {
+    width: 30px;
+}
+.item-container  p {
+    margin-left: 20px;
+}
+.item-container .card {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border: 1px solid #FFF;
+    padding: 10px;
+}
+.item-container .card:hover {
+    border: 1px solid #AAA;
+    cursor: pointer;
+}
+.item-container .bg-salmon {
+    border: 1px solid #AAA;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}

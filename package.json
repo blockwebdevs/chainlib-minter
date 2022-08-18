@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
+    "axios": "^0.27.2",
     "graphql": "^16.5.0",
+    "js-file-download": "^0.4.12",
     "mintbase": "^0.7.0",
     "mintbase-ui": "^0.5.2",
     "near-api-js": "^0.44.2",
