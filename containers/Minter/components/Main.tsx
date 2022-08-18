@@ -15,40 +15,6 @@ const Main = () => {
     const [isMinting, setIsMinting] = useState(false)
 
     const store = process.env.NEXT_PUBLIC_STORE_ID || ''
-    const imagePath = process.env.IMAGE_PATH
-
-    const download = e => {
-        console.log(e.target.href);
-        fetch(e.target.href, {
-            method: "GET",
-            headers: {}
-        })
-            .then(response => {
-                response.arrayBuffer().then(function (buffer) {
-                    const url = window.URL.createObjectURL(new Blob([buffer]));
-                    const link = document.createElement("a");
-                    link.href = url;
-                    link.setAttribute("download", "image.png"); //or any other extension
-                    document.body.appendChild(link);
-                    link.click();
-                });
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }
-
-    const handleDownload = (url, filename) => {
-        let url1 = '//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Google_Images_2015_logo.svg/'
-        let file = '220px-Google_Images_2015_logo.svg.png'
-        axios.get(url1, {
-            responseType: 'blob',
-        })
-            .then((res) => {
-                fileDownload(url1, file1)
-            })
-    }
-
 
     const [products, setProducts] = useState([]);
     useEffect(() => {
