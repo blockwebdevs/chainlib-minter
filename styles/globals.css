@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .item-container  img {
-    width: 30px;
+    width: 35px;
 }
 .item-container  p {
     margin-left: 20px;

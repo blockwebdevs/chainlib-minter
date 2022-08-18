@@ -91,7 +91,9 @@ const Main = () => {
     const [description, setDescription] = useState('');
 
     const handleClick = (key, product) => {
-        let description = product.product.translation.name + ' ';
+       let description = 'ID - ' + product.product.id;
+       description += '\n' + 'Title - ' + product.product.translation.name + ' ';
+       description += '\n' + 'Code - ' + product.product.code;
 
         for (let property in product.properties) {
             description += '\n' + property + ' - ' + product.properties[property]
@@ -239,16 +241,25 @@ const Main = () => {
                                 {products.map((product, key) => (
                                     <div className={isActive == key ? 'bg-salmon' : 'card'}
                                          onClick={() => handleClick(key, product)}>
+
                                         <img
                                             src={'https://back.chainlib.xyz/images/products/sm/' + product.product.main_image.src}
                                             alt=""/>
-                                        <p>{product.product.translation.name}</p>
                                         <p>
                                             <a href={'https://back.chainlib.xyz/download/image/' + product.product.main_image.src}
                                                download type="application/octet-stream">
-                                                <small>Download Image</small>
+                                                <small>
+                                                    <svg className="w-6 h-6" fill="none" stroke="currentColor"
+                                                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                              stroke-width="2"
+                                                              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                                    </svg>
+                                                </small>
                                             </a>
                                         </p>
+                                        <p>{product.product.translation.name}</p>
+
                                     </div>
                                 ))}
                             </div>
