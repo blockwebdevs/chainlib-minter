@@ -58,8 +58,19 @@ const Main = () => {
         description += '\n' + 'Code - ' + product.product.code;
 
         for (let property in product.properties) {
-            description += '\n' + property + ' - ' + product.properties[property]
+            console.log(property)
+            if (property === "Author's wallet") {
+                if (product.properties[property] === null) {
+                    description += '\n' + property + ' - ' + 'chainlib.testnet'
+                } else {
+                    description += '\n' + property + ' - ' + product.properties[property]
+                }
+            } else {
+                description += '\n' + property + ' - ' + product.properties[property]
+            }
         }
+
+
         setIsActive(current => key);
         setTitle(product.product.translation.name);
         setDescription(description);
@@ -127,6 +138,7 @@ const Main = () => {
         const metadata = {
             // title: data[EInputType.TITLE],
             // description: data[EInputType.DESCRIPTION],
+            price: 20,
             title: title,
             description: description,
             extra,
@@ -205,7 +217,7 @@ const Main = () => {
                                          onClick={() => handleClick(key, product)}>
                                         {product.product.main_image && (
                                             <img
-                                                src={'https://back.chainlib.xyz/images/products/sm/' + product.product.main_image.src}
+                                                src={'https://back.chainlib.xyz/images/products/md/' + product.product.main_image.src}
                                                 alt=""/>
                                         )}
                                         {product.product.main_image && (
