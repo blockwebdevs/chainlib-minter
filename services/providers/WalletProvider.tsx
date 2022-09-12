@@ -92,7 +92,7 @@ export const WalletProvider = (props: IWalletProvider) => {
     }
 
     const { data: walletData, error } = await new Wallet().init({
-      networkName: network ?? Network.testnet,
+      networkName: network ?? Network.mainnet,
       chain: chain ?? Chain.near,
       apiKey: apiKey,
     })

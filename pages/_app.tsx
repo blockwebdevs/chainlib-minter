@@ -11,11 +11,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <WalletProvider
-      network={Network.testnet as Network}
+      network={Network.mainnet as Network}
       chain={Chain.near as Chain}
       apiKey={mjsKey}
     >
-      <ApolloProvider client={getClient({ network: Network.testnet })}>
+      <ApolloProvider client={getClient({ network: Network.mainnet })}>
         <Component {...pageProps} />
       </ApolloProvider>
     </WalletProvider>
